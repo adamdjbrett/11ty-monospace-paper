@@ -4,7 +4,8 @@ language: "en"
 locale: en_US
 image: /img/logos.png
 favicon: /img/logos.png
-url: "http://localhost:8080"
+#url: "http://localhost:8080"
+url: "https://monospace.000000076.xyz/"
 metasocial: 
  - facebook: "https://www.facebook.com/"
  - twitteruser: "@username"
