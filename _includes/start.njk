@@ -1,0 +1,38 @@
+---
+layout: base.njk
+---
+<article>
+<h1>{{title}}</h1>
+<h2><a href="{{metadata.url}}">{{description}}</a></h2>
+<p class="post-meta"></p>
+{{content|safe}}
+<p>{% for s in social %}
+<a href="{{s.link}}" class="me-5" title="{{s.title}}"><i class="{{s.icon}} fa-2x"></i></a>{% endfor %}
+</p>
+<hr/>
+<section id="featured">
+<h2>{{metadata.featured_post}}</h2>
+{% for post in collections.featured | reverse | limit (2) %}
+<h3><a href="{{post.url}}">{{post.data.title}}</a></h3>
+<p class="post-meta"><i class="fas fa-calendar"></i> Published on <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time> by <i class="fas fa-user"></i> <a href="{{metadata.author.url}}">{{metadata.author.name}}</a></p>
+<p>{{post.data.description}}</p>
+<a href="{{post.url}}">Read {{post.data.title}}</a>
+{% endfor %}
+</section>
+<section id="recent-posts">
+<h2>{{metadata.recent_post}}</h2>
+{% for post in collections.posts | reverse | limit (4) %}
+<div class="post">
+<h3><a href="{{post.url}}">{{post.data.title}}</a></h3>
+<p class="post-meta"><i class="fas fa-calendar"></i> Published on <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time> by <i class="fas fa-user"></i> <a href="{{metadata.author.url}}">{{metadata.author.name}}</a></p>
+<p>{{post.data.description}}</p>
+<a href="{{post.url}}">Read {{post.data.title}}</a>
+</div>
+{% endfor %}
+</section>
+</article>
+<nav>
+<ul class="pagination">
+<li><a href="/blog" class="active">Explore All Article</a></li>
+</ul>
+</nav>

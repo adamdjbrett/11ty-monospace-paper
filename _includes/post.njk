@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+<nav class="breadcrumb" aria-label="breadcrumb">
+<div class="breadcrumb-item"><a href="/">Home</a></div>
+<div class="breadcrumb-item"><a href="/blog">Blog</a></div>
+<div class="breadcrumb-item active" aria-current="page">{{title}}</div>
+</nav>
+<article class="article-content">
+<h1><a href="{{page.url}}">{{title}}</a></h1>
+<h2>{{description}}</h2>
+<div class="article-meta">
+<p><span><i class="fas fa-calendar"></i> Published on <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> by <i class="fas fa-user"></i> <a href="{{metadata.author.url}}">{{metadata.author.name}}</a></span></p>
+{% if tag %}<p><i class="fa-solid fa-tags"></i> {%- for tag in tags | filterTagList %}{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %} <a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}	{%- endfor %}</p>{% endif %}
+</div>
+<div class="toci">
+<h3>{{metadata.toc}}</h3>
+{{content|toc|safe}}
+</div>
+{{content|safe}}
+</article>
+{%- if collections.posts %}
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<div class="article-navigation">
+{%- if previousPost %}<a href="{{ previousPost.url }}" class="nav-button" id="prev-article">← Previous Article</a>{% endif %}
+{%- if nextPost %}<a href="{{ nextPost.url }}" class="nav-button" id="next-article">Next Article →</a>{% endif %}
+</div>
+{%- endif %}
+{%- endif %}
