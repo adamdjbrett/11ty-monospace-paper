@@ -12,6 +12,7 @@ Featured:
 + Brutal Concept
 + Auto SEO
 + Static Page
++ Featured Post
 + Blog List
 + Blog Pagination
 + Post Article
@@ -23,6 +24,29 @@ Featured:
 + Tag Page
 + Tag List
 + And More...
+
+
+### Featured Post
+
+How to add Article in to Featured Post - simply just add `featured` on your tags
+
+implementation :
+
+```
+---
+title: "Adam DJ Brett's Professional Experience"
+description: "A brief overview of Adam DJ Brett's professional experience as an educator, coordinator, and web administrator."
+date: 2025-01-30
+tags:
+ - featured
+ - CV
+ - professional experience
+---
+### Professional Background
+
+Adam DJ Brett has a diverse professional background that spans several roles:
+
+```
 
 
 ### Need help or have project ?? Contact Me
