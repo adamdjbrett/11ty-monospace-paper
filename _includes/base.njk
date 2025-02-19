@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+<head>
+{% include "seo.njk" %}
+</head>
+<body>
+<a href="#skip" class="visually-hidden">Skip to main content</a>
+{% include "article.njk" %}
+<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+</body>
+</html>

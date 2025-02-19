@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<nav class="breadcrumb" aria-label="breadcrumb">
+<div class="breadcrumb-item"><a href="/">Home</a></div>
+<div class="breadcrumb-item active" aria-current="page">{{title}}</div>
+</nav>
+<article class="article-content">
+<h1><a href="{{page.url}}">{{title}}</a></h1>
+<h2>{{description}}</h2>
+<div class="toci">
+<h3>{{metadata.toc}}</h3>
+{{content|toc|safe}}
+</div>
+{{content|safe}}
+</article>

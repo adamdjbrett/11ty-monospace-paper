@@ -1,0 +1,57 @@
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+function setTheme(isDark) {
+    if (isDark) {
+        body.classList.add('dark-mode');
+        document.getElementById('light-icon').style.display = 'none';
+        document.getElementById('dark-icon').style.display = 'inline-block';
+    } else {
+        body.classList.remove('dark-mode');
+        document.getElementById('light-icon').style.display = 'inline-block';
+        document.getElementById('dark-icon').style.display = 'none';
+    }
+    localStorage.setItem('darkMode', isDark);
+}
+
+        const savedTheme = localStorage.getItem('darkMode');
+        if (savedTheme !== null) {
+            setTheme(savedTheme === 'true');
+        } else {
+            setTheme(false);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.contains('dark-mode');
+            setTheme(!isDarkMode);
+        });
+
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        prefersDarkScheme.addEventListener('change', (e) => {
+            setTheme(e.matches);
+        });
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('active');
+            }
+        });
+    </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

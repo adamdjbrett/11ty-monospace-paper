@@ -1,0 +1,8 @@
+---
+layout: base.njk
+---
+<article class="article-content">
+<h1><a href="{{page.url}}">{{title or metadata.title}}</a></h1>
+<h2>{{description or metadata.description}}</h2>
+{{ content | safe }}
+</article>

@@ -1,0 +1,32 @@
+title: "11ty Monocpsace Paper"
+description: "A 11ty Starter Monocpsace Paper develop by Adam Dj Brett"
+language: "en"
+locale: en_US
+image: /img/logos.png
+favicon: /img/logos.png
+url: "http://localhost:8080"
+metasocial: 
+ - facebook: "https://www.facebook.com/"
+ - twitteruser: "@username"
+ - twitter: "https://x.com/user"
+recent_post: Recent Posts
+featured_post: Featured Posts
+toc: On This Page
+navbar: 
+ - nav: Home
+   url: /
+ - nav: About
+   url: /about/
+ - nav: Contact
+   url: https://www.adamdjbrett.com
+ - nav: Github
+   url: https://github.com/adamdjbrett/11ty-monospace-paper
+footer: 
+ text1: Develop by
+ text2: Adam Dj Brett
+ text2_url: https://adamdjbrett.com
+author: 
+ name: "Adam DJ Brett"
+ image: "https://avatars.githubusercontent.com/u/22662978?v=4"
+ email: "info@adamdjbrett.com"
+ url: "/about/"
