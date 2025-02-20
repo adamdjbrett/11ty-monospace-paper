@@ -26,8 +26,13 @@ a {
     position: relative;
     color: var(--text-color);
 }
+
+
+
 .ms-5 {margin-right:8px;}
 .me-5 {margin-left:8px;}
+.mt-5 {margin-top:15px;}
+.mb-5 {margin-bottom:15px;}
 article a {
     position: relative;
 }
@@ -48,7 +53,9 @@ article a:hover::after {
     background-image: linear-gradient(to right, currentColor 100%, transparent 100%);
 }
 
-
+article a.non::after {
+    content: none; /* Ini yang diubah */
+}
 
         body {
             font-family: "monospace", Arial, sans-serif;
@@ -184,16 +191,7 @@ nav ul li a,
             content: none;
         }
 
-footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text);
-    text-align: center;
-    padding: 1rem 0;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-        #theme-toggle {
+       #theme-toggle {
             background-color: var(--post-background);
             border: 1px solid var(--post-border);
             color: var(--text-color);
@@ -277,7 +275,37 @@ footer {
             opacity: 0.7;
         }
 
-        @media (max-width: 768px) {
+.fa-rss:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.footer {
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+  footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    padding: 1rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .rss-icon {
+    font-size: 1.2em;
+    color: #FF6600;
+  }
+
+
+@media (max-width: 768px) {
             .header-content {
                 flex-wrap: wrap;
             }
