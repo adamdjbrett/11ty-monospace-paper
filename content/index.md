@@ -1,6 +1,6 @@
 ---
 layout: start.njk
-title: About 11ty Monocpsace Paper
+title: About 11ty Monospace Paper
 sub_title: A 11ty starter project develop by Adam Dj Brett
 description: A 11ty starter project develop by Adam Dj Brett for built unique website
 social: 

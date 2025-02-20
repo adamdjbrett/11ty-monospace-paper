@@ -58,7 +58,7 @@ article a.non::after {
 }
 
         body {
-            font-family: "monospace", Arial, sans-serif;
+            font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace;
             line-height: 1.6;
             margin: 0;
             padding: 0;
