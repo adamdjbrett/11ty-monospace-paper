@@ -1,2 +1,12 @@
-<footer><p>Built With <a href="https://11ty.dev" target="_blank">{{ eleventy.generator }}</a> {{metadata.footer.text1}} 
-<a href="{{metadata.footer.text2_url}}" target="_blank">{{metadata.footer.text2}}</a></footer>
+<footer>
+<div class="footer">
+  <p>
+    Built With <a href="https://11ty.dev" target="_blank">{{ eleventy.generator }}</a> {{metadata.footer.text1}} 
+    <a href="{{metadata.footer.text2_url}}" target="_blank">{{metadata.footer.text2}}</a>
+  </p>
+</div>
+  <a href="/feed/feed.xml" target="_blank" class="rss-icon" aria-label="RSS Feed">
+    <i class="fas fa-rss"></i>
+  </a>
+</footer>
+

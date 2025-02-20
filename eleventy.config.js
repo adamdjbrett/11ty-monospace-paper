@@ -8,6 +8,7 @@ import markdownItAnchor from "markdown-it-anchor";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItAttrs from 'markdown-it-attrs';
 import pluginTOC from 'eleventy-plugin-toc';
+import { execSync } from 'child_process';
 import pluginFilters from "./_config/filters.js";
 export default async function(eleventyConfig) {
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
@@ -36,6 +37,9 @@ export default async function(eleventyConfig) {
 		  return `print-${slug}`;
 		}
 	  });
+  eleventyConfig.on('eleventy.after', () => {
+		execSync(`npx pagefind --site _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
+	  })
 eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 }
 	});  let options = {
